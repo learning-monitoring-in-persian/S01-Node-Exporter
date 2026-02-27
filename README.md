@@ -11,6 +11,10 @@
 
 To set up the Node Exporter binary based on the official documentation, run the commands below:
 ```bash
+# Important Note
+# If your system architecture is not amd64 the command below will not work for you.
+# For example if it is arm64, replace all `amd64` with `arm64` in the commands below:
+
 VER="$(curl -s https://api.github.com/repos/prometheus/node_exporter/releases/latest | grep -m1 '"tag_name"' | cut -d'"' -f4)"
 TAR="node_exporter-${VER#v}.linux-amd64.tar.gz"
 
