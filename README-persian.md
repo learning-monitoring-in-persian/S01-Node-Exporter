@@ -11,6 +11,10 @@
 
 برای راه‌اندازی نسخه‌ی باینری Node Exporter طبق مستندات رسمی، دستورات زیر را اجرا کنید:
 ```bash
+# نکته‌ مهم
+# اگر معماری سیستمی که Node EXporter قرار است روی آن نصب شود amd64 نیست دستورات زیر به درستی برای شما کار نخواهند کرد.
+# برای مثال اگر معماری شما arm64 است باید تمامی  `amd64` ها را با `arm64` در کامند‌های زیر جایگزین کنید:
+
 VER="$(curl -s https://api.github.com/repos/prometheus/node_exporter/releases/latest | grep -m1 '"tag_name"' | cut -d'"' -f4)"
 TAR="node_exporter-${VER#v}.linux-amd64.tar.gz"
 
